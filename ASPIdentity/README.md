@@ -31,3 +31,8 @@
 6. IdentityUser properties
 	- Email: string
 	- PasswordHash: string but only accepts hashed result through IPasswordHasher
+
+9. C# version
+	- Open powershell
+	- Type csc -langversion:?
+	- The default one should be the current version
