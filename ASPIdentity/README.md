@@ -2,6 +2,7 @@
 
 1. README Formatting
    - https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#lists
+   - The README file should be placed at project root
 
 2. Migration for IdentityDbContext
    - Install Microsoft.EntityFrameworkCore.Tools

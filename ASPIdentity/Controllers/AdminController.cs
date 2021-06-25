@@ -5,22 +5,14 @@ using System.Threading.Tasks;
 
 namespace Identity.Controllers
 {
-    public class AdminController : Controller
+    public partial class AdminController : Controller
     {
         private UserManager<AppUser> userManager;
 
-        public AdminController(UserManager<AppUser> usrMgr)
-        {
-            userManager = usrMgr;
-        }
+        public AdminController(UserManager<AppUser> usrMgr) => userManager = usrMgr;
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
+        public IActionResult Index() => View();
         public ViewResult Create() => View();
-
         [HttpPost]
         public async Task<IActionResult> Create(User user)
         {
