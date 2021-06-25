@@ -18,3 +18,6 @@
    - Suppose your method returns something, then it will be public A returnA() => new A();
    - Suppose the class constructor parameters meet all parameters, then it will be public A(int x, int y) => (x,y) = (x,y);
    - https://www.youtube.com/watch?v=SKUH8333fXY&t=194s&ab_channel=ExecuteAutomation
+
+4. UserManager instance methods
+   - CreateAsync(TUser user, string password): Create user with given password
