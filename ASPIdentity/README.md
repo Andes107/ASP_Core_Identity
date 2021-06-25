@@ -19,8 +19,14 @@
    - Suppose the class constructor parameters meet all parameters, then it will be public A(int x, int y) => (x,y) = (x,y);
    - https://www.youtube.com/watch?v=SKUH8333fXY&t=194s&ab_channel=ExecuteAutomation
 
-4. UserManager instance methods
+4. UserManager methods (instance or extension)
    - CreateAsync(TUser user, string password): Create user with given password
+   - FindByIdAsync(string userId): returns TUser with that specified ID
+   - UpdateAsync(TUser user): Updates the specified user in the backing store.
 
 5. UserManager properties
 	- Users: Returns a IQueryable of registered users, IQueryable is IEnumerable
+
+6. IdentityUser properties
+	- Email: string
+	- PasswordHash: string but only accepts hashed result through IPasswordHasher

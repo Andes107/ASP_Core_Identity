@@ -8,9 +8,9 @@ namespace Identity.Controllers
     public partial class AdminController : Controller
     {
         private UserManager<AppUser> userManager;
-
-        public AdminController(UserManager<AppUser> usrMgr) => userManager = usrMgr;
-
+        private IPasswordHasher<AppUser> passwordHasher;
+        public AdminController(UserManager<AppUser> usrMgr, IPasswordHasher<AppUser> passwordHash) 
+            => (userManager, passwordHasher) = (usrMgr, passwordHash);
         public IActionResult Index() => View(userManager.Users);
         public ViewResult Create() => View();
         [HttpPost]
