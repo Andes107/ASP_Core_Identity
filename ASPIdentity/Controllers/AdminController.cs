@@ -11,7 +11,7 @@ namespace Identity.Controllers
 
         public AdminController(UserManager<AppUser> usrMgr) => userManager = usrMgr;
 
-        public IActionResult Index() => View();
+        public IActionResult Index() => View(userManager.Users);
         public ViewResult Create() => View();
         [HttpPost]
         public async Task<IActionResult> Create(User user)

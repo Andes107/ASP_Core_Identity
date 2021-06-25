@@ -21,3 +21,6 @@
 
 4. UserManager instance methods
    - CreateAsync(TUser user, string password): Create user with given password
+
+5. UserManager properties
+	- Users: Returns a IQueryable of registered users, IQueryable is IEnumerable
