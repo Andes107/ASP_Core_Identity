@@ -13,13 +13,13 @@ namespace Identity.IdentityPolicy
             IdentityResult result = await base.ValidateAsync(manager, user);
             List<IdentityError> errors = result.Succeeded ? new List<IdentityError>() : result.Errors.ToList();
 
-            if (user.UserName == "google")
+            /*if (user.UserName == "google")
             {
                 errors.Add(new IdentityError
                 {
                     Description = "Google cannot be used as a user name"
                 });
-            }
+            }*/
 
             if (!user.Email.ToLower().EndsWith("@yahoo.com"))
             {

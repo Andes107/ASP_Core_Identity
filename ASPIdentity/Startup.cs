@@ -52,6 +52,13 @@ namespace Identity
                     policy.RequireClaim("Coding Skill", "ASP.NET Core MVC");
                 });
             });
+            services.AddAuthentication()
+                    .AddGoogle(opts =>
+                    {
+                        opts.ClientId = "525716261806-8p3ub2j5487jnb4hmj8i3u8ia1m2fk9i.apps.googleusercontent.com";
+                        opts.ClientSecret = "awisxb_zvhLE3RXujUss_-Pq";
+                        opts.SignInScheme = IdentityConstants.ExternalScheme;
+                    });
             services.AddControllersWithViews();
         }
 
