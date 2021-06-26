@@ -44,6 +44,8 @@
 	- This configures whatever options you passed
 	- IServiceCollection AddTransient<TService, [DynamicallyAccessedMembersAttribute(DynamicallyAccessedMemberTypes.PublicConstructors)] TImplementation>(this IServiceCollection services)
 	- Adds implementation of that interface
+	- IServiceCollection ConfigureApplicationCookie(this IServiceCollection services, Action<CookieAuthenticationOptions> configure);
+	- This configures cookies options
 
 11. PasswordValidator<TUser>
 	- This class allows you to add extra conditions to password validation
