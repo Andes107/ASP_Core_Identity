@@ -58,3 +58,9 @@
 
 13. SignInManager methods
 	- Task<SignInResult> PasswordSignInAsync(TUser user, string password, bool isPersistent, bool lockoutOnFailure): Sign in
+
+14. Tag helper assembly issue
+	- @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+	- @addTagHelper *, ASPIdentity
+	- You need the assembly name, not the custom namespace
+	- https://stackoverflow.com/a/50845427

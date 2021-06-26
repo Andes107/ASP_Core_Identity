@@ -11,7 +11,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "http://localhost:50551/Role/Create",
+      "launchUrl": "http://localhost:50551/Role",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

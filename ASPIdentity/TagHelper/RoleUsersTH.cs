@@ -13,11 +13,7 @@ namespace Identity.TagHelpers
         private RoleManager<IdentityRole> roleManager;
 
         public RoleUsersTH(UserManager<AppUser> usermgr, RoleManager<IdentityRole> rolemgr)
-        {
-            userManager = usermgr;
-            roleManager = rolemgr;
-        }
-
+            => (userManager, roleManager) = (usermgr, rolemgr);
         [HtmlAttributeName("i-role")]
         public string Role { get; set; }
 
