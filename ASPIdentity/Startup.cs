@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Identity.IdentityPolicy;
 using System;
+using Microsoft.AspNetCore.Authorization;
+using Identity.CustomPolicy;
 
 namespace Identity
 {
@@ -21,6 +23,14 @@ namespace Identity
             services.AddTransient<IUserValidator<AppUser>, CustomUsernameEmailPolicy>();
             services.AddDbContext<AppIdentityDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
             services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppIdentityDbContext>().AddDefaultTokenProviders();
+
+            services.AddTransient<IAuthorizationHandler, AllowUsersHandler>();
+            services.AddAuthorization(opts => {
+                opts.AddPolicy("AllowTom", policy => {
+                    policy.AddRequirements(new AllowUserPolicy("tom"));
+                });
+            });
+
             services.Configure<IdentityOptions>(opts => {
                 opts.User.RequireUniqueEmail = true;
                 //opts.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz";

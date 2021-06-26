@@ -23,5 +23,7 @@ namespace Identity.Controllers
         }
         [Authorize(Policy = "AspManager")]
         public ViewResult Project() => View("Index", User?.Claims);
+        [Authorize(Policy = "AllowTom")]
+        public ViewResult TomFiles() => View("Index", User?.Claims);
     }
 }
