@@ -64,3 +64,8 @@
 	- @addTagHelper *, ASPIdentity
 	- You need the assembly name, not the custom namespace
 	- https://stackoverflow.com/a/50845427
+
+15. Null conditional operator
+	- ?.
+	- If the object is null, ignore the dot operator
+	- else, continue the access
