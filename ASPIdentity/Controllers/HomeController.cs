@@ -14,7 +14,7 @@ namespace Identity.Controllers
         private UserManager<AppUser> userManager;
         public HomeController(UserManager<AppUser> userMgr) => userManager = userMgr;
 
-        [Authorize]
+        [Authorize(Roles = "Manager")]
         public async Task<IActionResult> Index()
         {
             AppUser user = await userManager.GetUserAsync(HttpContext.User);
