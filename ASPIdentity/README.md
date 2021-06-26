@@ -40,6 +40,8 @@
 10. Startup class
 	- IServiceCollection Configure<TOptions>(this IServiceCollection services, Action<TOptions> configureOptions)
 	- This configures whatever options you passed
+	- IServiceCollection AddTransient<TService, [DynamicallyAccessedMembersAttribute(DynamicallyAccessedMemberTypes.PublicConstructors)] TImplementation>(this IServiceCollection services)
+	- Adds implementation of that interface
 
 11. PasswordValidator<TUser>
 	- This class allows you to add extra conditions to password validation
