@@ -36,6 +36,12 @@ namespace Identity
                 options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
                 options.SlidingExpiration = true;
             });
+            services.AddAuthorization(opts => {
+                opts.AddPolicy("AspManager", policy => {
+                    policy.RequireRole("Manager");
+                    policy.RequireClaim("Coding Skill", "ASP.NET Core MVC");
+                });
+            });
             services.AddControllersWithViews();
         }
 

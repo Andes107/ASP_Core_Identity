@@ -13,7 +13,6 @@ namespace Identity.Controllers
     public partial class ClaimsController : Controller
     {
         private UserManager<AppUser> userManager;
-
         public ClaimsController(UserManager<AppUser> userMgr)
             => userManager = userMgr;
         public ViewResult Index() => View(User?.Claims);
@@ -22,5 +21,7 @@ namespace Identity.Controllers
             foreach (IdentityError error in result.Errors)
                 ModelState.AddModelError("", error.Description);
         }
+        [Authorize(Policy = "AspManager")]
+        public ViewResult Project() => View("Index", User?.Claims);
     }
 }
