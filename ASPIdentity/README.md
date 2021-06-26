@@ -48,3 +48,6 @@
 	- Override Task<IdentityResult> ValidateAsync(UserManager<TUser> manager, TUser user, string password)
 	- IdentityResult.Success is also an IdentityResult class
 	- public static IdentityResult Failed(params IdentityError[] errors); is also a good stuff
+
+12. Attributes in controller
+	- using Microsoft.AspNetCore.Authorization;
