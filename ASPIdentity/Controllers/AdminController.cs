@@ -9,8 +9,10 @@ namespace Identity.Controllers
     {
         private UserManager<AppUser> userManager;
         private IPasswordHasher<AppUser> passwordHasher;
-        public AdminController(UserManager<AppUser> usrMgr, IPasswordHasher<AppUser> passwordHash) 
-            => (userManager, passwordHasher) = (usrMgr, passwordHash);
+        private IPasswordValidator<AppUser> passwordValidator;
+        private IUserValidator<AppUser> userValidator;
+        public AdminController(UserManager<AppUser> usrMgr, IPasswordHasher<AppUser> passwordHash, IPasswordValidator<AppUser> passwordVal, IUserValidator<AppUser> userValid) 
+            => (userManager, passwordHasher, passwordValidator, userValidator) = (usrMgr, passwordHash, passwordVal, userValid);
         public IActionResult Index() => View(userManager.Users);
         public ViewResult Create() => View();
         [HttpPost]
