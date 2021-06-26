@@ -26,6 +26,7 @@
    - DeleteAsync(TUser user): Deletes the specified user from the backing store.
    - Task<TUser> FindByEmailAsync(string email): Returns a user by the email.
    - Task<TUser> GetUserAsync(ClaimsPrincipal principal): Get user through HttpContext.Users
+   - Task<IdentityResult> AddClaimAsync(TUser user, Claim claim): Add claims 
 
 5. UserManager properties
 	- Users: Returns a IQueryable of registered users, IQueryable is IEnumerable
@@ -69,3 +70,8 @@
 	- ?.
 	- If the object is null, ignore the dot operator
 	- else, continue the access
+
+16. Claim
+	- public Claim(string type, string value, string valueType): constructor of claim class
+	- claims is a name-value pair
+	- use ClaimValueTypes.String for valuetype

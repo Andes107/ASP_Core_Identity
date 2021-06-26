@@ -4,12 +4,23 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
+using Identity.Models;
 
 namespace Identity.Controllers
 {
     [Authorize]
-    public class ClaimsController : Controller
+    public partial class ClaimsController : Controller
     {
+        private UserManager<AppUser> userManager;
+
+        public ClaimsController(UserManager<AppUser> userMgr)
+            => userManager = userMgr;
         public ViewResult Index() => View(User?.Claims);
+        void Errors(IdentityResult result)
+        {
+            foreach (IdentityError error in result.Errors)
+                ModelState.AddModelError("", error.Description);
+        }
     }
 }
