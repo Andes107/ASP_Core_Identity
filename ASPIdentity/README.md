@@ -40,3 +40,9 @@
 10. Startup class
 	- IServiceCollection Configure<TOptions>(this IServiceCollection services, Action<TOptions> configureOptions)
 	- This configures whatever options you passed
+
+11. PasswordValidator<TUser>
+	- This class allows you to add extra conditions to password validation
+	- Override Task<IdentityResult> ValidateAsync(UserManager<TUser> manager, TUser user, string password)
+	- IdentityResult.Success is also an IdentityResult class
+	- public static IdentityResult Failed(params IdentityError[] errors); is also a good stuff
