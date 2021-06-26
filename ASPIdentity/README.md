@@ -36,3 +36,7 @@
 	- Open powershell
 	- Type csc -langversion:?
 	- The default one should be the current version
+
+10. Startup class
+	- IServiceCollection Configure<TOptions>(this IServiceCollection services, Action<TOptions> configureOptions)
+	- This configures whatever options you passed
