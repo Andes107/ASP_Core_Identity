@@ -24,6 +24,8 @@
    - FindByIdAsync(string userId): returns TUser with that specified ID
    - UpdateAsync(TUser user): Updates the specified user in the backing store.
    - DeleteAsync(TUser user): Deletes the specified user from the backing store.
+   - Task<TUser> FindByEmailAsync(string email): Returns a user by the email.
+   - Task<TUser> GetUserAsync(ClaimsPrincipal principal): Get user through HttpContext.Users
 
 5. UserManager properties
 	- Users: Returns a IQueryable of registered users, IQueryable is IEnumerable
@@ -51,3 +53,6 @@
 
 12. Attributes in controller
 	- using Microsoft.AspNetCore.Authorization;
+
+13. SignInManager methods
+	- Task<SignInResult> PasswordSignInAsync(TUser user, string password, bool isPersistent, bool lockoutOnFailure): Sign in
