@@ -14,15 +14,15 @@ namespace Identity
     {
         public Startup(IConfiguration configuration) => Configuration = configuration;
         public IConfiguration Configuration { get; }
-
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IPasswordValidator<AppUser>, CustomPasswordPolicy>();
+            services.AddTransient<IUserValidator<AppUser>, CustomUsernameEmailPolicy>();
             services.AddDbContext<AppIdentityDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
             services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppIdentityDbContext>().AddDefaultTokenProviders();
             services.Configure<IdentityOptions>(opts => {
                 opts.User.RequireUniqueEmail = true;
-                opts.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz";
+                //opts.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz";
                 opts.Password.RequiredLength = 8;
                 opts.Password.RequireNonAlphanumeric = true;
                 opts.Password.RequireLowercase = false;
