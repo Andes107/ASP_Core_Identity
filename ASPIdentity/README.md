@@ -11,6 +11,8 @@
    - Update-Database
    - https://docs.microsoft.com/en-us/ef/core/cli/powershell#installing-the-tools
    - https://stackoverflow.com/a/54762138
+   - Migrations for non-dotnet core
+   - https://stackoverflow.com/a/32993262
 
 3. Expression Bodied Members
    - =>
@@ -78,3 +80,11 @@
 	- public Claim(string type, string value, string valueType): constructor of claim class
 	- claims is a name-value pair
 	- use ClaimValueTypes.String for valuetype
+
+17. Extra sources
+	- How signin-google works
+	- https://stackoverflow.com/questions/52980581/how-signin-google-in-asp-net-core-authentication-is-linked-to-the-google-handler
+	- How the cookies works
+	- https://www.yogihosting.com/aspnet-core-cookie-authentication/
+	- What is OAuth and OpenConnectId
+	- https://www.youtube.com/watch?v=996OiexHze0&ab_channel=OktaDev
