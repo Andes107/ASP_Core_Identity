@@ -28,9 +28,19 @@ namespace Identity.Controllers
         [Authorize(Policy = "AspManager")]
         public ViewResult Project()
         {
-            foreach (ClaimsIdentity claimsidentity in User?.Identities)
-                    _logger.LogInformation("The type is {type}", claimsidentity.Name);
+            /*foreach (ClaimsIdentity claimsidentity in User?.Identities)
+                    _logger.LogInformation("The type is {type}", claimsidentity.Name);*/
             //Its Tom, if by default
+            /*string Issuer = "https://gov.uk";
+            List<Claim> claims = new List<Claim> {
+                new Claim(ClaimTypes.Name, "Andrew", ClaimValueTypes.String, Issuer),
+                new Claim(ClaimTypes.Surname, "Lock", ClaimValueTypes.String, Issuer),
+                new Claim(ClaimTypes.Country, "UK", ClaimValueTypes.String, Issuer),
+                new Claim("ChildhoodHero", "Tom", ClaimValueTypes.String)
+            };
+            ClaimsIdentity newIdentity = new ClaimsIdentity(claims, "Passport");
+            User?.AddIdentity(newIdentity);*/
+            //Successfully added but not refereshed in AspnetUserClaim
             return View("Index", User?.Claims);
         }
         /*[Authorize(Policy = "AspManager")]
